@@ -1,0 +1,12 @@
+.idea
+.DS_Store
+
+# Dependencies
+node_modules
+
+# Environment varibales
+.env*
+!.env*.example
+
+# Code coverage
+package-lock.json
