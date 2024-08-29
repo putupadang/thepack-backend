@@ -9,7 +9,7 @@ const createInvoice = async (data) => {
   const month = String(now.getMonth() + 1).padStart(2, "0");
   const day = String(now.getDate()).padStart(2, "0");
 
-  let increment = "01"; // Default increment
+  let increment = "01";
 
   if (prevInvoice) {
     const previousDate = prevInvoice.slice(3, 9);
@@ -43,7 +43,7 @@ const deleteInvoice = async (id) => {
 };
 
 const updateInvoice = async (id, data) => {
-  return await Invoice.findByIdAndUpdate(id, data, { new: true });
+  return await Invoice.findOneAndUpdate({ _id: id }, data);
 };
 
 module.exports = {
